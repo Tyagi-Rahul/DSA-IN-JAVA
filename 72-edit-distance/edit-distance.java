@@ -23,10 +23,10 @@ class Solution {
         if(w1.charAt(i)==w2.charAt(j)){
             ans=minTD(w1,w2,i+1,j+1,dp);
         }else{
-            int in=minTD(w1,w2,i,j+1,dp);
-            int d=minTD(w1,w2,i+1,j,dp);
-            int r=minTD(w1,w2,i+1,j+1,dp);
-            ans=1+Math.min(in,Math.min(d,r));
+            int in=1+minTD(w1,w2,i,j+1,dp);
+            int d=1+minTD(w1,w2,i+1,j,dp);
+            int r=1+minTD(w1,w2,i+1,j+1,dp);
+            ans=Math.min(in,Math.min(d,r));
         }
         return dp[i][j]=ans;
 
